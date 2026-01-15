@@ -29,7 +29,8 @@ jobs:
       env:
         KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
       run: |
-        echo "$KEYSTORE_BASE64" | base64 -d > HINGOLIHUBKEY
+        echo "$KEYSTORE_BASE64" | base64 --decode > HINGOLIHUBKEY
+        ls -la HINGOLIHUBKEY
 
     - name: Build Release AAB
       env:
@@ -42,11 +43,3 @@ jobs:
       with:
         name: app-release-aab
         path: app/build/outputs/bundle/release/*.aab
-
-    - name: Upload APK (if exists)
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: app-release-apk
-        path: app/build/outputs/apk/release/*.apk
-        if-no-files-found: ignore
