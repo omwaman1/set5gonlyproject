@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Set 5G Only</string>
-    <string name="aboutom">About Om</string>
-    <string name="set5gonly">Set 5G Only</string>
+    <string name="set5gonly">Open Network Settings</string>
+    <string name="title_5g_mode">5G Only Mode</string>
+    <string name="subtitle_description">Force your device to use 5G network only for maximum speed</string>
+    <string name="footer_hint">Opens RadioInfo settings</string>
+    <string name="instruction_label">HOW TO SELECT NR BAND</string>
 </resources>

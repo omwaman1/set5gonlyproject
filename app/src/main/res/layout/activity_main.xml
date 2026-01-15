@@ -1,55 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#000000">
+    android:fillViewport="true"
+    android:background="@color/background">
 
-    <Button
-        android:id="@+id/buttonAbout"
-        android:layout_width="390dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="540dp"
-        android:background="#FFFFFF"
-        android:text="@string/aboutom"
-        android:visibility="visible"
-        tools:visibility="visible" />
-    <Button
-        android:id="@+id/set5gButton"
-        android:layout_width="390dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonAbout"
-        android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
-        android:text="@string/set5gonly"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="32dp">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/logo" />
+        <!-- 5G Signal Icon -->
+        <ImageView
+            android:id="@+id/iconSignal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_5g_signal"
+            android:contentDescription="5G Signal"
+            android:layout_marginBottom="20dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="396dp"
-        android:layout_height="106dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="387dp"
-        android:layout_marginEnd="0dp"
-        android:scaleType="fitStart"
-        android:visibility="visible"
-        app:srcCompat="@drawable/sc" />
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_5g_mode"
+            android:textColor="@color/text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
 
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_description"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:lineSpacingMultiplier="1.3"
+            android:layout_marginBottom="32dp" />
 
-</RelativeLayout>
+        <!-- Instruction Card with SC Image -->
+        <LinearLayout
+            android:id="@+id/instructionCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp">
+
+            <!-- Instruction Label -->
+            <TextView
+                android:id="@+id/instructionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instruction_label"
+                android:textColor="@color/primary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="12dp" />
+
+            <!-- SC Image showing how to select NR band -->
+            <ImageView
+                android:id="@+id/instructionImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sc"
+                android:contentDescription="How to select NR band" />
+
+        </LinearLayout>
+
+        <!-- Button right below the card -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/set5gButton"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/set5gonly"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            android:background="@drawable/button_gradient"
+            app:cornerRadius="14dp"
+            app:rippleColor="#60FFFFFF" />
+
+        <!-- Footer Hint -->
+        <TextView
+            android:id="@+id/footerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/footer_hint"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Version Text -->
+        <TextView
+            android:id="@+id/versionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>

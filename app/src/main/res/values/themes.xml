@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Set5gonly" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Force dark theme always with pure black status bar -->
+    <style name="Base.Theme.Set5gonly" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#3B82F6</item>
+        <item name="colorPrimaryDark">#2563EB</item>
+        <item name="android:statusBarColor">#0A0A0A</item>
+        <item name="android:navigationBarColor">#0A0A0A</item>
+        <item name="android:windowBackground">#0A0A0A</item>
+        <item name="colorSurface">#0A0A0A</item>
+        <item name="colorOnSurface">#FFFFFF</item>
     </style>
 
     <style name="Theme.Set5gonly" parent="Base.Theme.Set5gonly" />
